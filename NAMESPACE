@@ -1,0 +1,30 @@
+export(
+	'NanoStringNorm',
+	'Plot.NanoStringNorm',
+	'Plot.NanoStringNorm.gvis',
+	'read.xls.RCC',
+	'read.markup.RCC',
+	'other.normalization',
+	'norm.comp',
+	'nsn'
+	)
+
+import(
+	'gdata'
+	)
+
+#	'probe.correction.factor.normalization',
+#	'code.count.normalization',
+#	'background.normalization',
+#	'sample.content.normalization',
+#	'get.beta.se.and.p',
+#	'get.mean.sd.and.cv',
+#	'output.formatting',
+#	'get.batch.effects',
+#	'get.ttest.and.foldchange',
+#	'get.trait.summary.stats',
+#	'get.gene.summary.stats',
+#	'get.sample.summary.stats',
+#	'get.geo.mean',
+#	'other.normalization'
+#	)
