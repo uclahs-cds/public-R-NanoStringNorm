@@ -4,7 +4,7 @@ Title: Normalize NanoString miRNA and mRNA data
 Version: 1.1.19
 Date: 2015-01-12
 Author: Daryl M. Waggott
-Maintainer: Daryl Waggott <Daryl.Waggott@oicr.on.ca>
+Maintainer: Paul Boutros <Paul.Boutros@oicr.on.ca>
 Depends: R (>= 2.14.0), gdata (>= 2.8.2)
 Suggests: vsn (>= 3.22.0), googleVis (>= 0.2.14), lme4, RUnit (>= 0.4.26)
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data
