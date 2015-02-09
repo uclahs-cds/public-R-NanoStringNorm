@@ -59,12 +59,12 @@ other.normalization.vsn <- function(x, anno, OtherNorm = 'none', verbose = TRUE,
 	if ( all(genes.to.fit == genes.to.predict) ) {
 		# using common data
 		# x.fit <- justvsn(x.fit);
-		x.fit <- vsn2(x.fit, verbose = verbose, ...);
+		x.fit <- vsn::vsn2(x.fit, verbose = verbose, ...);
 		x.predict <- predict(x.fit, newdata = x.predict, useDataInFit = TRUE);
 		}
 	else {
 		# fit model on controls and predict on endogenous
-		x.fit <- vsn2(x.fit, minDataPointsPerStratum = 16, verbose = verbose, ...);
+		x.fit <- vsn::vsn2(x.fit, minDataPointsPerStratum = 16, verbose = verbose, ...);
 		x.predict <- predict(x.fit, newdata = x.predict, useDataInFit = FALSE);
 		}
 	
