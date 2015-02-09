@@ -60,7 +60,7 @@ Plot.NanoStringNorm.gvis <- function(x, plot.type = c("gene.norm", "sample"), sa
 		# "iconKeySettings":[{"key":{"dim0":"Cyp1b1"},"trailStart":"1901"}]
 
 		# call googlevis and make motionChart
-		plot.motion = gvisMotionChart(
+		plot.motion = googleVis::gvisMotionChart(
 			data = data.to.plot, 
 			idvar = idvar, 
 			timevar = "time", 
@@ -84,13 +84,13 @@ Plot.NanoStringNorm.gvis <- function(x, plot.type = c("gene.norm", "sample"), sa
 		# create a data table containing the plotted data
 		data.to.plot$time <- NULL;
 
-		plot.table <- gvisTable(
+		plot.table <- googleVis::gvisTable(
 			data = data.to.plot,
 			options=list(width=600, height=700)
 			);
 
 		# merge the chart and table
-		plot.merge <- gvisMerge(plot.motion, plot.table, horizontal = TRUE);
+		plot.merge <- googleVis::gvisMerge(plot.motion, plot.table, horizontal = TRUE);
 
 		if (save.plot == TRUE) {
 			# don't plot just save
