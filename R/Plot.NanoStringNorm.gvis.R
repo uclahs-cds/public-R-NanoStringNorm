@@ -11,7 +11,7 @@
 
 Plot.NanoStringNorm.gvis <- function(x, plot.type = c("gene.norm", "sample"), save.plot = FALSE, path.to.mongoose = "web", output.directory = "NanoStringNorm_gvis_plots") {
 
-	if (!suppressPackageStartupMessages(require(googleVis))) {
+	if (!suppressPackageStartupMessages(requireNamespace("googleVis"))) {
 		stop ("Plot.NanoStringNorm.gvis:  googleVis is not available.");
 		}
 

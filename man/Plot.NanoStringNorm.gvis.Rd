@@ -85,7 +85,7 @@
          );
  
  # plot the sample summaries to your browser
- if (require(googleVis)) \{
+ if (requireNamespace("googleVis")) \{
  Plot.NanoStringNorm.gvis(
          x = NanoString.mRNA.norm,
          plot.type = c('gene.norm', 'sample'),

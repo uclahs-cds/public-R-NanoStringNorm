@@ -11,7 +11,7 @@
 
 .test <- function(dir, pattern = "^test_.*\\.R$") {
 
-    require("RUnit");
+    requireNamespace("RUnit");
     package.name <- "NanoStringNorm";
 
 	print(
