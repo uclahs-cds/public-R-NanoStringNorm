@@ -613,7 +613,7 @@ Plot.NanoStringNorm <- function(x, plot.type = 'norm.factors', samples = NA, gen
 					cex = batch.cex,
 					col = batch.col,
 					xlab = sample.statistic,
-					ylim = c(-max(abs(batch.diff)),max(abs(batch.diff))),
+					ylim = c(-max(abs(batch.diff), na.rm=TRUE),max(abs(batch.diff), na.rm=TRUE)),
 					#main = if (title == TRUE) sample.statistic else NA,
 					main = sample.statistic,
 					xaxt = 'n'
