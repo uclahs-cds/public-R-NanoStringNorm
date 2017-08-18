@@ -9,9 +9,9 @@ A suite of functions for the normalization, visualization and differential expre
 \tabular{ll}{
 Package: \tab NanoStringNorm\cr
 Type: \tab Package\cr
-Version: \tab 1.1.22\cr
-Date: \tab 2017-06-30\cr
-License: \tab GPL2 under?\cr
+Version: \tab 1.2.0\cr
+Date: \tab 2017-08-17\cr
+License: \tab GPL2\cr
 LazyLoad: \tab yes\cr
 }
 }
