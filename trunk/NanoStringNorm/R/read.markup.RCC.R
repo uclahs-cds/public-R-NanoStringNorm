@@ -97,7 +97,7 @@ read.markup.RCC <- function(rcc.path = ".", rcc.pattern = "*.RCC|*.rcc", exclude
 	# set column name
 	colnames(rcc.data.merged[1]) <- "Code.Count";
 
-	# merge data structures
+	# merge data structures
 	x <- list(x = rcc.data.merged, header = rcc.header.merged);
 
 	class(x) <- 'NanoString';
