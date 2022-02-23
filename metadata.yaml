@@ -1,0 +1,17 @@
+---
+Category: tool
+Description: Normalize NanoString miRNA and mRNA Data
+Maintainers: PBoutros@mednet.ucla.edu
+Contributors:
+  - Daryl M. Waggott
+  - Paul Boutros
+  - Julie Livingstone
+Languages: R (>= 2.14.0)
+Dependencies:
+  - gdata (>= 2.8.2)
+  - vsn (>= 3.22.0)
+  - XML (>= 3.98-1.5)
+  - googleVis (>= 0.2.14)
+  - lme4
+  - RUnit (>= 0.4.26)
+References: ''  # is the tool/dependencies published, is there a confluence page
