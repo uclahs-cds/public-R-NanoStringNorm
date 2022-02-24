@@ -1,4 +1,5 @@
-me: R-CMD-check
+---
+name: R-CMD-check
 
 on:
   pull_request:
