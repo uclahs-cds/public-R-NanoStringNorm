@@ -5,7 +5,7 @@ Version: 1.2.1
 Date: 2017-12-11
 Author: Daryl M. Waggott
 Maintainer: Paul Boutros <PBoutros@mednet.ucla.edu>
-Depends: R (>= 2.14.0), gdata (>= 2.8.2), vsn (>= 3.22.0), XML (>= 3.98-1.5)
+Depends: R (>= 2.14.0), gdata (>= 2.8.2), XML (>= 3.98-1.5)
 Imports: methods
 Suggests: googleVis (>= 0.2.14), lme4, RUnit (>= 0.4.26)
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.

@@ -20,14 +20,11 @@ other.normalization <- function(x, anno, OtherNorm = 'none', verbose = TRUE, gen
 	else if (OtherNorm == 'rank.normal') {
 		x = other.normalization.rank.normal(x, anno, OtherNorm, verbose = verbose, genes.to.fit = genes.to.fit);
 		}
-	else if (OtherNorm == 'vsn') {
-		x = other.normalization.vsn(x, anno, OtherNorm, verbose = verbose, genes.to.fit = genes.to.fit, genes.to.predict);
-		}
 	else if (OtherNorm == 'none') {
 		return(x);
 		}
 	else {
-		stop(paste('OtherNorm:  The OtherNorm option', OtherNorm, 'is not implemented try using one of quantile, zscore, rank.normal, vsn.'));
+		stop(paste('OtherNorm:  The OtherNorm option', OtherNorm, 'is not implemented try using one of quantile, zscore, rank.normal.'));
 		}
 
 	return(x);

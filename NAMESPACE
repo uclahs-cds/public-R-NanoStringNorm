@@ -19,7 +19,6 @@ importFrom("stats", "aov", "coef", "cor", "density", "lm", "lowess",
          "quantile", "resid", "sd", "t.test")
 importFrom("utils", "download.file", "packageDescription",
          "read.table")
-importFrom("vsn", "predict")
 importFrom("utils", "read.csv")
 import(
     'gdata',
