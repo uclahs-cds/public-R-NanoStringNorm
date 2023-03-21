@@ -1,8 +1,8 @@
 Package: NanoStringNorm
 Type: Package
 Title: Normalize NanoString miRNA and mRNA Data
-Version: 1.2.1
-Date: 2017-12-11
+Version: 2.0.0
+Date: 2023-03-21
 Author: Daryl M. Waggott
 Maintainer: Paul Boutros <PBoutros@mednet.ucla.edu>
 Depends: R (>= 2.14.0), gdata (>= 2.8.2), XML (>= 3.98-1.5)
