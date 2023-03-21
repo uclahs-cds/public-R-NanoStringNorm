@@ -9,7 +9,6 @@ Contributors:
 Languages: R (>= 2.14.0)
 Dependencies:
   - gdata (>= 2.8.2)
-  - vsn (>= 3.22.0)
   - XML (>= 3.98-1.5)
   - googleVis (>= 0.2.14)
   - lme4

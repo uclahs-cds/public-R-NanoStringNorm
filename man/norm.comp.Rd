@@ -11,7 +11,7 @@ CodeCount.methods = c('none', 'sum', 'geo.mean'),
 Background.methods = c('none','mean', 'mean.2sd','max'), 
 SampleContent.methods = c('none','housekeeping.sum', 'housekeeping.geo.mean', 
 	'total.sum','top.mean', 'top.geo.mean', 'low.cv.geo.mean'),
-OtherNorm.methods = c('none','quantile','zscore', 'rank.normal', 'vsn'),
+OtherNorm.methods = c('none','quantile','zscore', 'rank.normal'),
 histogram = FALSE, 
 verbose = TRUE, 
 icc.method = "mixed")
