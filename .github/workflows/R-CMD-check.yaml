@@ -16,5 +16,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: NanoStringNorm
+      - run: R -e "install.packages('gdata', 'XML')"
       - run: R CMD build --compact-vignettes="gs+qpdf" NanoStringNorm
       - run: R CMD check --as-cran --run-donttest NanoStringNorm_*.tar.gz
