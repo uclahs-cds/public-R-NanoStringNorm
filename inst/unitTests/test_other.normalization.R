@@ -30,7 +30,7 @@ test.other.normalization <- function(date.input = '2011-11-04', date.checked.out
 	test.output.zscore      <- NanoStringNorm:::other.normalization(x, anno, OtherNorm = 'zscore', verbose = FALSE, genes.to.fit = 'endogenous');
 	test.output.quantile    <- NanoStringNorm:::other.normalization(x, anno, OtherNorm = 'quantile', verbose = FALSE, genes.to.fit = 'endogenous');
 
-	### *** need to add rank.normal and vsn tests
+	### *** need to add rank.normal test
 
 	### check1 - compare checked output == test output
 	check1.1 <- checkEquals(checked.output.zscore, test.output.zscore);

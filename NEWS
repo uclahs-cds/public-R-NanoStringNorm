@@ -1,3 +1,8 @@
+NanoStringNorm 2.0.0 2023-03-21
+----------------------------------------------------------------
+REMOVED
+* Removed vsn functionality due to broken CRAN dependency
+
 NanoStringNorm 1.2.1 2017-12-11
 ----------------------------------------------------------------
 

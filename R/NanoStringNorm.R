@@ -142,7 +142,7 @@ NanoStringNorm <- function(x, anno = NA, header = NA, Probe.Correction.Factor = 
 	if ( !SampleContent %in% c('none', 'housekeeping.sum', 'housekeeping.geo.mean', 'total.sum', 'top.mean', 'top.geo.mean', 'low.cv.geo.mean') ) {
 		stop('NanoStringNorm: Unrecognized SampleContent Normalization method');
 		}
-	if ( !OtherNorm %in% c('none', 'quantile', 'zscore', 'rank.normal', 'vsn') ) {
+	if ( !OtherNorm %in% c('none', 'quantile', 'zscore', 'rank.normal') ) {
 		stop('NanoStringNorm: Unrecognized OtherNorm Normalization method');
 		}
 
@@ -181,7 +181,7 @@ NanoStringNorm <- function(x, anno = NA, header = NA, Probe.Correction.Factor = 
 		rm(output.sample.content.normalization);
 		}
 	# do other additional normalizations.  note these are applied to all endogenous probes but excluding counts equal to 0
-	if ( OtherNorm %in% c('quantile', 'zscore', 'rank.normal', 'vsn') ) {
+	if ( OtherNorm %in% c('quantile', 'zscore', 'rank.normal') ) {
 		x <- other.normalization(x = x, anno = anno, OtherNorm = OtherNorm, verbose = verbose, genes.to.fit, genes.to.predict);
 		}
 
