@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: NanoStringNorm
-      - run: apt-get update && apt-get install -y libxml2-dev
+      - run: apt-get update && apt-get install -y libxml2-dev cmake
       - run: R -e "install.packages(c('gdata', 'XML', 'googleVis', 'lme4', 'RUnit'))"
       - run: R CMD build --compact-vignettes="gs+qpdf" NanoStringNorm
       - run: R CMD check --as-cran --run-donttest NanoStringNorm_*.tar.gz
