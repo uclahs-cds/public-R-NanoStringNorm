@@ -43,43 +43,41 @@ read.xls.RCC <- function(xls, sheet = 1, perl, sample.id.row = "File.Name") {
 
 	    return(list(
 	        header = header,
-	        counts = data
+	        x = data
 	        ));
 	    }
 	rcc <- prep.rcc(xls, sheet);
-	
-	header <- rcc$header;
 
-	if (is.null(header)) {
-		stop("READ.XLS.RCC: There appears to be a problem with RCC file.  No header found.");
+	if (is.null(rcc$header)) {
+		stop("READ.XLS.RCC: There appears to be a problem with RCC file.  No rcc$header found.");
 		}
 
-	header <- header[!is.na(header[1]), ];
-	rownames(header) <- header[, 1];
-	header <- header[, -1];
+	rcc$header <- rcc$header[!is.na(rcc$header[1]), ];
+	rownames(rcc$header) <- rcc$header[, 1];
+	rcc$header <- rcc$header[, -1];
 	
-	rownames(header) <- gsub(" $", "", rownames(header));
-	rownames(header) <- gsub(" ", ".", rownames(header));
-	rownames(header) <- tolower(rownames(header));
+	rownames(rcc$header) <- gsub(" $", "", rownames(rcc$header));
+	rownames(rcc$header) <- gsub(" ", ".", rownames(rcc$header));
+	rownames(rcc$header) <- tolower(rownames(rcc$header));
 	
-	if ('id' %in% rownames(header)) {
-	    rownames(header)[rownames(header) == 'id'] <- 'sample.id';
+	if ('id' %in% rownames(rcc$header)) {
+	    rownames(rcc$header)[rownames(rcc$header) == 'id'] <- 'sample.id';
 	    }
 
-	if (!all(c("file.name", "sample.id", "binding.density") %in% rownames(header)))  {
-		stop("READ.XLS.RCC: There appears to be a problem with RCC file.  Rownames in header are missing File name , Sample id, Binding density");
+	if (!all(c("file.name", "sample.id", "binding.density") %in% rownames(rcc$header)))  {
+		stop("READ.XLS.RCC: There appears to be a problem with RCC file.  Rownames in rcc$header are missing File name , Sample id, Binding density");
 		}
 
-	# parse the header
-	header <- header[!rownames(header) %in% c('file.attributes', 'lane.attributes'), ];
-	header['sample.date', ] <- format(
+	# parse the rcc$header
+	rcc$header <- rcc$header[!rownames(rcc$header) %in% c('file.attributes', 'lane.attributes'), ];
+	rcc$header['sample.date', ] <- format(
 	    as.Date(
-	        as.integer(header['sample.date', ]),
+	        as.integer(rcc$header['sample.date', ]),
 	        origin = '1899-12-30'
 	        ),
 	    format = '%Y/%m/%d'
 	    );
-    header['binding.density', ] <- as.numeric(header['binding.density', ]);
+    rcc$header['binding.density', ] <- as.numeric(rcc$header['binding.density', ]);
 	
 	prep.file.versions <- function(file.versions) {
 	    result <- as.character(file.versions)
@@ -87,13 +85,13 @@ read.xls.RCC <- function(xls, sheet = 1, perl, sample.id.row = "File.Name") {
 	    result[!is.na(numeric.versions)] <- numeric.versions[!is.na(numeric.versions)];
 	    return(as.character(result));
 	    }
-    header['file.version', ] <- prep.file.versions(header['file.version', ]);
-    header <- header[, -c(1,2)];
+    rcc$header['file.version', ] <- prep.file.versions(rcc$header['file.version', ]);
+    rcc$header <- rcc$header[, -c(1,2)];
 
-	sample.ids <- header[rownames(header) %in% tolower(sample.id.row),];
+	sample.ids <- rcc$header[rownames(rcc$header) %in% tolower(sample.id.row),];
 	sample.ids <- gsub(" ", ".", sample.ids);
 	sample.ids <- gsub("^([0-9])", "X\\1", sample.ids);
-	colnames(header) <- sample.ids;
+	colnames(rcc$header) <- sample.ids;
 
 	# define pattern of first line of count data
 	pattern.first.line.counts <- "Code";
@@ -111,7 +109,7 @@ read.xls.RCC <- function(xls, sheet = 1, perl, sample.id.row = "File.Name") {
 		);
 
 	if (is.null(x)) {
-		stop("READ.XLS.RCC: There appears to be a problem with RCC file. Likely couldnt find the count header specifically `Code Class`");
+		stop("READ.XLS.RCC: There appears to be a problem with RCC file. Likely couldnt find the count rcc$header specifically `Code Class`");
 		}
 
 	# drop any trailing columns 
@@ -146,7 +144,6 @@ read.xls.RCC <- function(xls, sheet = 1, perl, sample.id.row = "File.Name") {
 	cat(paste("\n\nThere were", nrow(x), "genes imported with the following Code Class breakdown:"));
 	print(table(x$Code.Class));
 
-	x <- list(x = x, header = header);
-	class(x) <- 'NanoString';
-	return(x);
+	class(rcc) <- 'NanoString';
+	return(rcc);
 	}
