@@ -22,59 +22,77 @@ read.xls.RCC <- function(xls, sheet = 1, perl, sample.id.row = "File.Name") {
 		}
 
 	# check if worksheet exists
-	sheet.names <- gdata::sheetNames(xls = xls, perl = perl);
+	sheet.names <- readxl::excel_sheets(xls);
 	cat(paste("\nYou have chosen to import worksheet ", sheet, " named ", sheet.names[sheet], ". Does that sound correct?\n", sep = ""));
 	cat(paste("The other sheet names are: \n"));
 	cat(paste(paste(1:length(sheet.names), sheet.names, sep = ":"), collapse = "\n"));
 	cat("\n\n");
 
-	# define pattern of first line of sample names
-	pattern.first.line.header <- "File";
+	prep.rcc <- function(path, sheet) {
+	    data <- as.data.frame(readxl::read_excel(
+	        xls,
+	        sheet = sheet,
+	        col_names = FALSE,
+	        col_types = 'text',
+	        trim_ws = TRUE
+	        ));
 
-	# call gdata::read.excel and load header with sample names
-	header <- gdata::read.xls(
-		xls = xls,
-		sheet = sheet,
-		pattern = pattern.first.line.header,
-		method = "tab",
-		perl = perl,
-		header = FALSE,
-		as.is = TRUE,
-		row.names = 1,
-		nrow = 16,
-		strip.white = TRUE
-		);
+	    data.start.index <- min(which(data[, 1] == 'Reporter Counts'));
+	    header <- data[1:(data.start.index - 1), ];
+	    data <- data[data.start.index:nrow(data), ];
+
+	    return(list(
+	        header = header,
+	        counts = data
+	        ));
+	    }
+	rcc <- prep.rcc(xls, sheet);
+	
+	header <- rcc$header;
 
 	if (is.null(header)) {
 		stop("READ.XLS.RCC: There appears to be a problem with RCC file.  No header found.");
 		}
 
+	header <- header[!is.na(header[1]), ];
+	rownames(header) <- header[, 1];
+	header <- header[, -1];
+	
 	rownames(header) <- gsub(" $", "", rownames(header));
 	rownames(header) <- gsub(" ", ".", rownames(header));
 	rownames(header) <- tolower(rownames(header));
-	if ("id" %in% rownames(header)) {rownames(header)[rownames(header) == "id"] <- "sample.id"}
-
+	
+	if ('id' %in% rownames(header)) {
+	    rownames(header)[rownames(header) == 'id'] <- 'sample.id';
+	    }
 
 	if (!all(c("file.name", "sample.id", "binding.density") %in% rownames(header)))  {
 		stop("READ.XLS.RCC: There appears to be a problem with RCC file.  Rownames in header are missing File name , Sample id, Binding density");
 		}
 
 	# parse the header
+	header <- header[!rownames(header) %in% c('file.attributes', 'lane.attributes'), ];
+	header['sample.date', ] <- format(
+	    as.Date(
+	        as.integer(header['sample.date', ]),
+	        origin = '1899-12-30'
+	        ),
+	    format = '%Y/%m/%d'
+	    );
+    header['binding.density', ] <- as.numeric(header['binding.density', ]);
+	
+	prep.file.versions <- function(file.versions) {
+	    result <- as.character(file.versions)
+	    numeric.versions <- as.numeric(result);
+	    result[!is.na(numeric.versions)] <- numeric.versions[!is.na(numeric.versions)];
+	    return(as.character(result));
+	    }
+    header['file.version', ] <- prep.file.versions(header['file.version', ]);
+    header <- header[, -c(1,2)];
 
-	# drop missing rows
-	header <- header[!rownames(header) %in% c('file.attributes','lane.attributes'),];
-	# drop missing columns
-	header <- header[,-c(1,2)]; 
-	# drop trailing columns
-	header <- header[,!is.na(header[1,]) & !is.na(header[2,])];
-	# get sample IDs
 	sample.ids <- header[rownames(header) %in% tolower(sample.id.row),];
-
-	# change spaces to dots in sample names
 	sample.ids <- gsub(" ", ".", sample.ids);
-	sample.ids <- gsub("^([0-9])", "X\\1" ,sample.ids);  
-
-	# add sample names
+	sample.ids <- gsub("^([0-9])", "X\\1", sample.ids);
 	colnames(header) <- sample.ids;
 
 	# define pattern of first line of count data
