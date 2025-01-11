@@ -1,3 +1,9 @@
+# NanoStringNorm 3.0.0 (2025-01-10)
+
+## Changed
+* Update changelog to Markdown format
+
+
 # NanoStringNorm 2.0.0 (2023-03-21)
 
 ## Removed
