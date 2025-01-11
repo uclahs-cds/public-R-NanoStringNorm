@@ -1,3 +1,9 @@
+NanoStringNorm 3.0.0 2025-01-10
+----------------------------------------------------------------
+
+UPDATED
+- Replaced gdata dependency with readxl for loading Excel files due to deprecated Excel support.
+
 NanoStringNorm 2.0.0 2023-03-21
 ----------------------------------------------------------------
 REMOVED
