@@ -2,7 +2,7 @@ export(
 	'NanoStringNorm',
 	'Plot.NanoStringNorm',
 	'Plot.NanoStringNorm.gvis',
-	'read.xls.RCC',
+	'read.csv.RCC',
 	'read.markup.RCC',
 	'other.normalization',
 	'norm.comp',
