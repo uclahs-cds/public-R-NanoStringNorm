@@ -7,8 +7,11 @@ Authors@R: c(
 	person(c("Daryl", "M."), "Waggott", role = "aut"),
 	person("Paul", "Boutros", email = "PBoutros@mednet.ucla.edu", role = "cre"),
 	person("Dan", "Knight", role = "ctb"))
-Depends: R (>= 2.14.0), gdata (>= 2.8.2), XML (>= 3.98-1.5)
-Imports: methods
+Depends:
+  R (>= 2.14.0)
+Imports:
+  methods,
+  XML
 Suggests: googleVis (>= 0.2.14), lme4, RUnit (>= 0.4.26)
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.
 License: GPL-2

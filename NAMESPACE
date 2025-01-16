@@ -20,10 +20,7 @@ importFrom("stats", "aov", "coef", "cor", "density", "lm", "lowess",
 importFrom("utils", "download.file", "packageDescription",
          "read.table")
 importFrom("utils", "read.csv")
-import(
-    'gdata',
-    'XML'
-	)
+import('XML')
 
 
 
