@@ -10,8 +10,7 @@ Authors@R: c(
 Depends:
   R (>= 2.14.0)
 Imports:
-  methods,
-  XML
+  methods
 Suggests: googleVis (>= 0.2.14), lme4, RUnit (>= 0.4.26)
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.
 License: GPL-2
