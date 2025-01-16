@@ -9,7 +9,10 @@ Authors@R: c(
 	person("Dan", "Knight", role = "ctb"))
 Depends: R (>= 2.14.0), gdata (>= 2.8.2), XML (>= 3.98-1.5)
 Imports: methods
-Suggests: googleVis (>= 0.2.14), lme4, RUnit (>= 0.4.26)
+Suggests:
+  testthat,
+  googleVis (>= 0.2.14),
+  lme4
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.
 License: GPL-2
 LazyLoad: yes
