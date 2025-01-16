@@ -1,5 +1,5 @@
 %\VignetteIndexEntry{Introduction to NanoStringNorm}
-%\VignetteDepends{googleVis,gdata}
+%\VignetteDepends{googleVis}
 %\VignetteKeywords{Expression Analysis}
 %\VignettePackage{NanoStringNorm}
 
