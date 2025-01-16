@@ -1,5 +1,12 @@
+NanoStringNorm 3.0.0 2025-01-15
+----------------------------------------------------------------
+
+CHANGED
+* Replaced RUnit framework with testthat
+
 NanoStringNorm 2.0.0 2023-03-21
 ----------------------------------------------------------------
+
 REMOVED
 * Removed vsn functionality due to broken CRAN dependency
 
