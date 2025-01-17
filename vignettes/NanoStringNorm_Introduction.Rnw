@@ -1,5 +1,5 @@
 %\VignetteIndexEntry{Introduction to NanoStringNorm}
-%\VignetteDepends{googleVis,gdata}
+%\VignetteDepends{googleVis}
 %\VignetteKeywords{Expression Analysis}
 %\VignettePackage{NanoStringNorm}
 
@@ -95,13 +95,13 @@ dev.off();
 
 The input data usually comes in the form of a structured Excel spreadsheet.  You can export the raw count data from Excel as a delimited text file for use with R.  Start by opening the \emph{raw} worksheet in a blank Excel page for editing.  Copy the count data (row 23) for each sample including the first 3 annotation columns (Code.Class, Name and Accession) to a separate worksheet or text file.  Don't forget to add the sample IDs (row 5), and remove any incomplete rows or columns.  The resulting tabular data can be saved as a tab delimited file for import into R.
 \\ \\
-Alternatively, you can import data directly from xls format into R using the function \Rfunction{read.xls.RCC} based on core functionality in the \Rpackage{gdata} package.
+Alternatively, you can import nCounter spreadsheet data from CSV format into R using the function \Rfunction{read.csv.RCC}. (Note that Excel spreadsheets must first be converted to CSV.)  
 
 <<eg.read.xls>>=
 # directly import the nCounter output
-path.to.xls.file <- system.file("extdata", "RCC_files", "RCCCollector1_rat_tcdd.xls", 
+path.to.csv.file <- system.file("extdata", "RCC_files", "RCCCollector1_rat_tcdd.csv", 
                                 package = "NanoStringNorm");
-NanoString.mRNA <- read.xls.RCC(x = path.to.xls.file, sheet = 1);
+NanoString.mRNA <- read.csv.RCC(path.to.csv.file);
 # only keep the counts and not the header
 NanoString.mRNA <- NanoString.mRNA$x;
 @

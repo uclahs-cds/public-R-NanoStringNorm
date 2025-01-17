@@ -4,6 +4,13 @@ NanoStringNorm 3.0.0 2025-01-15
 CHANGED
 * Replaced RUnit framework with testthat
 
+REMOVED
+* Removed Excel .xls support due to broken CRAN dependency
+
+ADDED
+* Added CSV support for nCounter Excel files. Excel files must be converted externally.
+
+
 NanoStringNorm 2.0.0 2023-03-21
 ----------------------------------------------------------------
 

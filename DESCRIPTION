@@ -13,6 +13,10 @@ Suggests:
   testthat,
   googleVis (>= 0.2.14),
   lme4
+Depends:
+  R (>= 2.14.0)
+Imports:
+  methods
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.
 License: GPL-2
 LazyLoad: yes
