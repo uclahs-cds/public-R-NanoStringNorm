@@ -1,4 +1,10 @@
-# NanoStringNorm 3.0.0 (2025-01-10)
+# NanoStringNorm 3.0.0 (2025-01-15)
+
+## Removed
+* Removed Excel `.xls` support due to broken CRAN dependency
+
+## Added
+* Added CSV support for nCounter Excel files. Excel files must be converted externally.
 
 ## Changed
 * Update changelog to Markdown format
