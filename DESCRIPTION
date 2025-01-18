@@ -2,11 +2,7 @@ Package: NanoStringNorm
 Type: Package
 Title: Normalize NanoString miRNA and mRNA Data
 Version: 3.0.0
-<<<<<<< HEAD
 Date: 2025-01-16
-=======
-Date: 2025-01-15
->>>>>>> 0ef4621656f9437cbea69a61fe742408648da16b
 Authors@R: c(
 	person(c("Daryl", "M."), "Waggott", role = "aut"),
 	person("Paul", "Boutros", email = "PBoutros@mednet.ucla.edu", role = "cre"),
