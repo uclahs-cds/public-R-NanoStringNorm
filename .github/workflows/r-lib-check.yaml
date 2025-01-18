@@ -16,5 +16,6 @@ jobs:
       - name: Install LaTeX packages
         run: |
           tlmgr install \
-          cite
+          cite \
+          grfext
       - uses: uclahs-cds/tool-R-CMD-check-action@main
