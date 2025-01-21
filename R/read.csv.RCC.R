@@ -64,6 +64,7 @@ read.csv.RCC <- function(path, sample.id.row = 'File.Name') {
 
     colnames(rcc$x) <- gsub(' ', '.', colnames(rcc$x));
     colnames(rcc$x) <- c(colnames(rcc$x)[1:3], sample.ids);
+    rcc$x[, sample.ids] <- lapply(rcc$x[, sample.ids], as.numeric);
 
     cat(paste('There were', length(sample.ids), 'samples imported. \nNote that spaces in sample names will be replaced by dots. \n'));
 
