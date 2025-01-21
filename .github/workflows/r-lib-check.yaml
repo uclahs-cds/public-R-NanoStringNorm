@@ -1,0 +1,22 @@
+---
+name: R-CMD-check (r-lib)
+'on':
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * MON'
+jobs:
+  R-CMD-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: r-lib/actions/setup-tinytex@v2
+      - name: Install LaTeX packages
+        run: |
+          tlmgr update --self && \
+          tlmgr install \
+          cite \
+          grfext
+      - uses: uclahs-cds/tool-R-CMD-check-action@main
