@@ -1,7 +1,10 @@
 # NanoStringNorm
 
 1. [Description](#description)
-
+2. [Installation](#installation)
+3. [Resources](#resources)
+4. [Getting Help](#getting-help)
+5. [Citation Information](#citation-information)
 
 ## Description
 
@@ -32,11 +35,11 @@ Available resources on *NanoStringNorm* usage can be found at the package [CRAN 
 
 ## Getting Help
 
-Looking for guidance or support with *NanoStringNorm*? Check out our [discussions page](https://github.com/uclahs-cds/public-R-NanoStringNorm/discussions).
+Looking for guidance or support with *NanoStringNorm*? Check out our [discussions page](https://github.com/uclahs-cds/package-NanoStringNorm/discussions).
 
-Submit bugs, suggest new features, or see current work at our [issues](https://github.com/uclahs-cds/public-R-NanoStringNorm/issues) page.
+Submit bugs, suggest new features, or see current work at our [issues](https://github.com/uclahs-cds/package-NanoStringNorm/issues) page.
 
-[Pull requests](https://github.com/uclahs-cds/public-R-NanoStringNorm/pulls) are also open for discussion.
+[Pull requests](https://github.com/uclahs-cds/package-NanoStringNorm/pulls) are also open for discussion.
 
 
 ## Citation Information
