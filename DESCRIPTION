@@ -16,6 +16,8 @@ Suggests:
   googleVis (>= 0.2.14),
   lme4
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.
+URL: https://github.com/uclahs-cds/package-NanoStringNorm
+BugReports: https://github.com/uclahs-cds/package-NanoStringNorm/issues
 License: GPL-2
 LazyLoad: yes
 LazyData: yes
