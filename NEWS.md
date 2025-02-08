@@ -1,4 +1,4 @@
-# NanoStringNorm 3.0.0 (2025-01-24)
+# NanoStringNorm 3.0.0 (2025-02-07)
 
 ## Removed
 * Removed Excel `.xls` support due to broken CRAN dependency
