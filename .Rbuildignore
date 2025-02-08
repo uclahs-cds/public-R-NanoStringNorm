@@ -1,3 +1,7 @@
 ^\.github$
 ^metadata\.yaml$
 ^LICENSE\.md$
+^.*\.Rproj$
+^\.Rproj\.user$
+NanoStringNorm_Example_Plots_All.pdf
+NanoStringNorm_Interactive_Plot

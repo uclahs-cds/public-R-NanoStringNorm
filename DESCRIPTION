@@ -2,7 +2,7 @@ Package: NanoStringNorm
 Type: Package
 Title: Normalize NanoString miRNA and mRNA Data
 Version: 3.0.0
-Date: 2025-01-17
+Date: 2025-02-07
 Authors@R: c(
 	person(c("Daryl", "M."), "Waggott", role = "aut"),
 	person("Paul", "Boutros", email = "PBoutros@mednet.ucla.edu", role = "cre"),
@@ -16,6 +16,8 @@ Suggests:
   googleVis (>= 0.2.14),
   lme4
 Description: A set of tools for normalizing, diagnostics and visualization of NanoString nCounter data.
+URL: https://github.com/uclahs-cds/package-NanoStringNorm
+BugReports: https://github.com/uclahs-cds/package-NanoStringNorm/issues
 License: GPL-2
 LazyLoad: yes
 LazyData: yes
